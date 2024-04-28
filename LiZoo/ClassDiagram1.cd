@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LiZoo.Models.Animal">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQAAAIAAAEAAAAQIACAAAAgAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.Models.Bird">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Bird.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.Models.Cat">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Cat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.Models.CatType">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CatType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.Models.Fish">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Fish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.Models.Cage">
+    <Position X="5.25" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAIACAAQAAAAAAAAQAAAAAAAAAIAAAAAAAAE=</HashCode>
+      <FileName>Models\Cage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.AnimalEditForm">
+    <Position X="13" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCEAICAACQAABAAAACAAAACAIAIAAABYAEQQGAAACA=</HashCode>
+      <FileName>AnimalEditForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.AnimalsForm">
+    <Position X="11.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBEBAIAACQAAECACACAAAACAAAAAAAQAAAQAAAAAAE=</HashCode>
+      <FileName>AnimalsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.MenuForm">
+    <Position X="11.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAECIAAAAAAACAAAACAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>MenuForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.Database">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiZoo.CagesForm">
+    <Position X="14.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABCAACBAEgBCAUAACAAAAAAAAAAAAAAgCAIA=</HashCode>
+      <FileName>CagesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LiZoo.FoodTypeEnum">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAABAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FoodTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
