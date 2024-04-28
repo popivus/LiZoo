@@ -1,6 +1,6 @@
 ﻿namespace LiZoo
 {
-    partial class Form1
+    partial class AnimalsForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -32,6 +32,8 @@
             createButton = new Button();
             editButton = new Button();
             deleteButton = new Button();
+            pickButton = new Button();
+            cancelButton = new Button();
             ((System.ComponentModel.ISupportInitialize)animalsGridView).BeginInit();
             SuspendLayout();
             // 
@@ -84,16 +86,38 @@
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Click += deleteButton_Click;
             // 
-            // Form1
+            // pickButton
+            // 
+            pickButton.Location = new Point(713, 415);
+            pickButton.Name = "pickButton";
+            pickButton.Size = new Size(75, 23);
+            pickButton.TabIndex = 4;
+            pickButton.Text = "Выбрать";
+            pickButton.UseVisualStyleBackColor = true;
+            pickButton.Click += this.pickButton_Click;
+            // 
+            // cancelButton
+            // 
+            cancelButton.Location = new Point(632, 415);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(75, 23);
+            cancelButton.TabIndex = 5;
+            cancelButton.Text = "Отмена";
+            cancelButton.UseVisualStyleBackColor = true;
+            cancelButton.Click += this.cancelButton_Click;
+            // 
+            // AnimalsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cancelButton);
+            Controls.Add(pickButton);
             Controls.Add(deleteButton);
             Controls.Add(editButton);
             Controls.Add(createButton);
             Controls.Add(animalsGridView);
-            Name = "Form1";
+            Name = "AnimalsForm";
             Text = "Все животные";
             ((System.ComponentModel.ISupportInitialize)animalsGridView).EndInit();
             ResumeLayout(false);
@@ -105,5 +129,7 @@
         private Button createButton;
         private Button editButton;
         private Button deleteButton;
+        private Button pickButton;
+        private Button cancelButton;
     }
 }

@@ -2,24 +2,36 @@ using LiZoo.Models;
 
 namespace LiZoo
 {
-    public partial class Form1 : Form
+    public partial class AnimalsForm : Form
     {
-        public List<Animal> Animals { get; set; }
-
-        public Form1()
+        public AnimalsForm(bool isForSelect = false)
         {
             InitializeComponent();
 
-            Animals = [];
-            animalsGridView.DataSource = Animals;
+            animalsGridView.DataSource = Database.Animals;
 
             animalsGridView.Columns[3].Visible = false;
+            animalsGridView.Columns[6].Visible = false;
 
             animalsGridView.Columns[0].HeaderText = "Имя";
             animalsGridView.Columns[1].HeaderText = "Возраст";
             animalsGridView.Columns[2].HeaderText = "Вес";
             animalsGridView.Columns[4].HeaderText = "Пищевое поведение";
             animalsGridView.Columns[5].HeaderText = "Вид";
+
+            if (isForSelect)
+            {
+                createButton.Visible = false;
+                editButton.Visible = false;
+                deleteButton.Visible = false;
+
+                animalsGridView.DataSource = new List<Animal>(Database.Animals.Where(a => !a.IsInCage).ToList());
+            }
+            else
+            {
+                cancelButton.Visible = false;
+                pickButton.Visible = false;
+            }    
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -28,28 +40,27 @@ namespace LiZoo
             if (animalEditForm.ShowDialog() != DialogResult.OK)
                 return;
 
-            Animals.Add(animalEditForm.Animal);
+            Database.Animals.Add(animalEditForm.Animal);
 
-            animalsGridView.DataSource = new List<Animal>(Animals);
+            animalsGridView.DataSource = new List<Animal>(Database.Animals);
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (animalsGridView.SelectedRows.Count == 0)
+            if (SelectedAnimal is null)
                 return;
 
-            Animal animalToDelete = (Animal)animalsGridView.SelectedRows[0].DataBoundItem;
-            Animals.Remove(animalToDelete);
+            Database.Animals.Remove(SelectedAnimal);
 
-            animalsGridView.DataSource = new List<Animal>(Animals); ;
+            animalsGridView.DataSource = new List<Animal>(Database.Animals);
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (animalsGridView.SelectedRows.Count == 0)
+            if (SelectedAnimal is null)
                 return;
 
-            Animal animalToEdit = (Animal)animalsGridView.SelectedRows[0].DataBoundItem;
+            Animal animalToEdit = SelectedAnimal;
             AnimalEditForm animalEditForm = new(animalToEdit);
             if (animalEditForm.ShowDialog() != DialogResult.OK)
                 return;
@@ -67,7 +78,22 @@ namespace LiZoo
             if (animalToEdit is Fish fish)
                 fish.IsFreshwater = ((Fish)editedAnimal).IsFreshwater;
 
-            animalsGridView.DataSource = new List<Animal>(Animals); ;
+            animalsGridView.DataSource = new List<Animal>(Database.Animals);
+        }
+
+        public Animal? SelectedAnimal => animalsGridView.SelectedRows[0]?.DataBoundItem as Animal;
+
+        private void pickButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedAnimal is null)
+                return;
+
+            DialogResult = DialogResult.OK;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

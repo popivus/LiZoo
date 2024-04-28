@@ -73,5 +73,7 @@
                 return "Неопознанный";
             }
         }
+
+        public bool IsInCage { get; set; }
     }
 }
