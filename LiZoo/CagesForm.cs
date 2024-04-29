@@ -30,6 +30,8 @@ namespace LiZoo
             if (SelectedCage is null)
                 return;
 
+            SelectedCage.ClearCage();
+
             Database.Cages.Remove(SelectedCage);
             cagesGridView.DataSource = new List<Cage>(Database.Cages);
         }
